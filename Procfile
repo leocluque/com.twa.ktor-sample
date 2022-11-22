@@ -1,0 +1,1 @@
+web: ./build/install/com.twa.ktor-sample/bin/com.twa.ktor-sample
