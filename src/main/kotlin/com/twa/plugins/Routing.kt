@@ -11,9 +11,9 @@ fun Application.configureRouting() {
 
     routing {
         get("/") {
-//            if (call.request.headers["MyCustomHeader"] == null) {
-//                call.respond(HttpStatusCode.Forbidden)
-//            }
+            if (call.request.headers["MyCustomHeader"] == null) {
+                call.respond(HttpStatusCode.Forbidden)
+            }
             call.respondFile(File("./src/main/resources/static/index.html"))
 
         }
