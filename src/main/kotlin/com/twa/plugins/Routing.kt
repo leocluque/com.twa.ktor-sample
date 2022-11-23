@@ -12,7 +12,7 @@ fun Application.configureRouting() {
 
     routing {
         get("/") {
-            if (call.request.headers["X-Custom-Header"] == null) {
+            if (call.request.headers["Authorization"] == null) {
                 call.respond(HttpStatusCode.Forbidden)
             }
             call.respondFile(File("./src/main/resources/static/index.html"))
