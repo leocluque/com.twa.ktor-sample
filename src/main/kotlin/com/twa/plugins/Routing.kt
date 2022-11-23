@@ -11,7 +11,7 @@ fun Application.configureRouting() {
 
     routing {
         get("/") {
-            if (call.request.headers["MyCustomHeader"] == null) {
+            if (call.request.headers["X-Session-Token"] == null) {
                 call.respond(HttpStatusCode.Forbidden)
             }
             call.respondFile(File("./src/main/resources/static/index.html"))

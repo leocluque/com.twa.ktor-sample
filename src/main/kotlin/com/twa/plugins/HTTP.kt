@@ -24,7 +24,7 @@ fun Application.configureHTTP() {
         allowMethod(HttpMethod.Delete)
         allowMethod(HttpMethod.Patch)
         allowHeader(HttpHeaders.Authorization)
-        allowHeader("MyCustomHeader")
+        allowHeader("X-Session-Token")
         anyHost() // @TODO: Don't do this in production if possible. Try to limit it.
     }
 
