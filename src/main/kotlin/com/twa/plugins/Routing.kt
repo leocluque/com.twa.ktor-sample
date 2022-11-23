@@ -4,7 +4,6 @@ import io.ktor.http.*
 import io.ktor.server.routing.*
 import io.ktor.server.http.content.*
 import io.ktor.server.application.*
-import io.ktor.server.request.*
 import io.ktor.server.response.*
 import java.io.File
 
@@ -12,6 +11,10 @@ fun Application.configureRouting() {
 
     routing {
         get("/") {
+            call.respondFile(File("./src/main/resources/static/index.html"))
+        }
+
+        get("/validateHeader") {
             if (call.request.headers["Authorization"] == null) {
                 call.respond(HttpStatusCode.Forbidden)
             }
