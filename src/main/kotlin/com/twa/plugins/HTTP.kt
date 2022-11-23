@@ -26,6 +26,9 @@ fun Application.configureHTTP() {
         allowHeader(HttpHeaders.Authorization)
         allowHeader(HttpHeaders.AccessControlAllowHeaders)
         allowHeader("MyCustomHeader")
+        exposeHeader("MyCustomHeader")
+        allowHeadersPrefixed("custom-")
+        exposeHeader("custom-")
         anyHost() // @TODO: Don't do this in production if possible. Try to limit it.
     }
 
