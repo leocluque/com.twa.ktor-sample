@@ -19,7 +19,7 @@ fun Application.configureRouting() {
         }
 
         get("/deeplink") {
-            call.respondRedirect("https://ktor-twa.herokuapp.com/deeplink?url=https://ktor-twa.herokuapp.com/challenge/bio")
+            call.respondRedirect("https://ktor-twa.herokuapp.com/challenge/bio")
         }
 
         static("/.well-known") {
